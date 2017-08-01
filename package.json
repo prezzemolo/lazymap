@@ -1,0 +1,7 @@
+{
+  "name": "lazymap",
+  "scripts": {
+    "test": "echo '-- ranking --'; node run.js | sed -n -e 's/\\(^.*\\): \\(.*$\\)/\\2 \\(\\1\\)/gp' | sort"
+  },
+  "author": "prezzemolo <contact@prezzemolo.ga>"
+}
