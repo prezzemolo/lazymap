@@ -7,18 +7,22 @@ for (let count = 0; count < 10000; count++) {
 
 const callback = (num) => num * 10
 
-console.time('impl generator')
-for (const ans of impl.generator(array, callback)) {}
-console.timeEnd('impl generator')
+console.time('generator with while loop')
+for (const ans of impl.generator_with_while(array, callback)) {}
+console.timeEnd('generator with while loop')
 
-console.time('impl homemade iterator')
+console.time('generator with for loop')
+for (const ans of impl.generator_with_for(array, callback)) {}
+console.timeEnd('generator with for loop')
+
+console.time('homemade iterator')
 const it = impl.homemade(array, callback)
 for (const ans of it) {}
-console.timeEnd('impl homemade iterator')
+console.timeEnd('homemade iterator')
 
-console.time('impl psuedo map')
+console.time('psuedo array.prototype.map')
 impl.map(array, callback)
-console.timeEnd('impl psuedo map')
+console.timeEnd('psuedo array.prototype.map')
 
 console.time('array.prototype.@@iterator')
 for (const ans of array) {}
@@ -28,6 +32,6 @@ console.time('array.entries iterator')
 for (const ans of array.entries()) {}
 console.timeEnd('array.entries iterator')
 
-console.time('array.map')
+console.time('array.prototype.map')
 array.map(callback)
-console.timeEnd('array.map')
+console.timeEnd('array.prototype.map')

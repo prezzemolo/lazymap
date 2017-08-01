@@ -1,6 +1,12 @@
-exports.generator = function* (array, callback) {
+exports.generator_with_while = function* (array, callback) {
     var index = 0
     while (array.length > index) {
+        yield callback(array[index++])
+    }
+}
+
+exports.generator_with_for = function* (array, callback) {
+    for (var index = 0; array.length > index; index++) {
         yield callback(array[index++])
     }
 }
