@@ -34,8 +34,8 @@ exports.homemade =  (array, callback) => {
 exports.map = (array, callback) => {
     // mean return value
     var rv = []
-    for (var i = 0; i < array.length; i++) {
-        rv.push(array[i])
+    for (var index = 0; index < array.length; index++) {
+        rv.push(array[index])
     }
     return rv
 }
