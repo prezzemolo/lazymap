@@ -15,6 +15,10 @@ console.time('generator with for loop')
 for (const ans of impl.generator_with_for(array, callback)) {}
 console.timeEnd('generator with for loop')
 
+console.time('generator with do ... while loop')
+for (const ans of impl.generator_with_do_while(array, callback)) {}
+console.timeEnd('generator with do ... while loop')
+
 console.time('homemade iterator')
 const it = impl.homemade(array, callback)
 for (const ans of it) {}

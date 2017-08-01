@@ -11,6 +11,13 @@ exports.generator_with_for = function* (array, callback) {
     }
 }
 
+exports.generator_with_do_while = function* (array, callback) {
+    var index = 0
+    do
+        yield callback(array[index++])
+    while (array.length > index)
+}
+
 exports.homemade =  (array, callback) => {
     var proto = {}
     proto[Symbol.iterator] = () => {
