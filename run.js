@@ -2,7 +2,7 @@ const lazy = require('./lazy')
 
 const array = []
 for (let count = 0; count < 10000; count++) {
-    array[count] = Math.random().toString()
+    array[count] = Math.random()
 }
 
 const callback = (num) => num * 10
@@ -13,6 +13,13 @@ for (const ans of lazy.generator(array, callback)) {
 }
 console.timeEnd('generator')
 
+console.time('array iterate')
+for (const ans of array) {
+    console.warn(ans)
+}
+console.timeEnd('array iterate')
+
 console.time('array.map')
-array.map(callback).forEach(ans => console.warn(ans))
+array.map(callback).forEach(ans2 => console.warn(ans2))
 console.timeEnd('array.map')
+
