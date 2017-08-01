@@ -19,7 +19,7 @@ for (const ans of array) {
 }
 console.timeEnd('array iterate')
 
-console.time('array.map')
+console.time('array.map.forEach')
 array.map(callback).forEach(ans2 => console.warn(ans2))
-console.timeEnd('array.map')
+console.timeEnd('array.map.forEach')
 
