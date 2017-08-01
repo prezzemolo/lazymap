@@ -20,12 +20,14 @@ console.time('impl psuedo map')
 impl.map(array, callback)
 console.timeEnd('impl psuedo map')
 
-console.time('array iterate')
-for (const ans of array) {
-}
-console.timeEnd('array iterate')
+console.time('array.prototype.@@iterator')
+for (const ans of array) {}
+console.timeEnd('array.prototype.@@iterator')
+
+console.time('array.entries iterator')
+for (const ans of array.entries()) {}
+console.timeEnd('array.entries iterator')
 
 console.time('array.map')
 array.map(callback)
 console.timeEnd('array.map')
-
