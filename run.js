@@ -26,6 +26,6 @@ for (const ans of array) {
 console.timeEnd('array iterate')
 
 console.time('array.map')
-const map = array.map(callback)
+array.map(callback)
 console.timeEnd('array.map')
 
