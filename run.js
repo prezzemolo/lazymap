@@ -16,12 +16,16 @@ const it = impl.homemade(array, callback)
 for (const ans of it) {}
 console.timeEnd('impl homemade iterator')
 
+console.time('impl psuedo map')
+impl.map(array, callback)
+console.timeEnd('impl psuedo map')
+
 console.time('array iterate')
 for (const ans of array) {
 }
 console.timeEnd('array iterate')
 
-console.time('array.map.forEach')
+console.time('array.map')
 const map = array.map(callback)
-console.timeEnd('array.map.forEach')
+console.timeEnd('array.map')
 

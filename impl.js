@@ -10,9 +10,14 @@ exports.homemade =  (array, callback) => {
     proto[Symbol.iterator] = () => {
         var index = 0
         return {
-            next: () => index < array.length ?
-                {value: array[index++], done:false} :
-                {done:true}
+            next: () => index < array.length
+                ? {
+                    value: array[index++],
+                    done:false
+                }
+                : {
+                    done:true
+                }
         }
     }
     return {
@@ -20,3 +25,11 @@ exports.homemade =  (array, callback) => {
     }
 }
 
+exports.map = (array, callback) => {
+    // mean return value
+    var rv = []
+    for (var i = 0; i < array.length; i++) {
+        rv.push(array[i])
+    }
+    return rv
+}
